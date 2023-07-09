@@ -155,9 +155,9 @@ MESSAGE_TAGS = {
 # email stuff
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = '1234teacher'
-DEFAULT_FROM_EMAIL = 'tteachergradingsystem@gmail.com'
-EMAIL_HOST_USER = 'tteachergradingsystem@gmail.com'
+EMAIL_HOST_PASSWORD = 'your gmail password'
+DEFAULT_FROM_EMAIL = 'youremail@gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_ACTIVE_FIELD = 'is_active'
 EMAIL_SERVER = 'smtp.gmail.com'
