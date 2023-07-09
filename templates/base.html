@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Grading-System</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/Mucg.ico' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NewBiz - v4.7.0
+  * Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo resize">
+        <!-- Uncomment below if you prefer to use an text logo -->
+        <h1><a href="{% url 'home' %}">M.U.C.G</a></h1> 
+        <!-- <a href="{% url 'home' %}"><img src="{% static 'assets/img/Mucg.ico' %}" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+
+          <li><a class="nav-link scrollto" href="{% url 'review' %}">Rating-Lecturers</a></li> 
+
+          <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home' %}"> Welcome, {{user.first_name}}</a></li>
+          {% else %}      
+          <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'createAccount' %}">Register</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+  </header><!-- #header -->
+
+{% block content %}
+<!-- {% for msg in messages %}
+<div class="alert alert-dismissible fade show" role="alert">
+ <strong>Success!</strong>  {{ msg }}
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %} -->
+
+{% if messages %}
+
+<br>
+<br>
+<br>
+
+
+    {% for message in messages %}
+         <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+             <strong>{{ message.tags }}! {{ message }}</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+    {% endfor %}
+
+
+{% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+
+

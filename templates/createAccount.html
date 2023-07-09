@@ -1,0 +1,124 @@
+{% include 'base.html' %}
+
+<br>
+<br>
+<br>
+<br>
+{% block body %}
+<div class="container">
+    <header class="header">
+      <h1 id="title" class="text-center" style="color:rgba(4, 6, 112, 0.9);"> Register</h1>
+      <p id="description" class="description text-center" style="color:rgba(9, 10, 73, 0.9);">
+        Register Now!  we are ready to serve you.
+      </p>
+    </header>
+    <form action="createAccount" method="POST" style="color:rgba(16, 16, 71, 0.9);">
+        {% csrf_token %}
+      <div class="form-group">
+        <label id="name-label" for="first_name">First_Name:</label>
+        <input
+          type="text"
+          name="first_name"
+          id="first_name"
+          class="form-control"
+          
+          required
+        />
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <label id="name-label" for="last_name">Last_Name:</label>
+        <input
+          type="text"
+          name="last_name"
+          id="last_name"
+          class="form-control"
+          
+          required
+        />
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label id="name-label" for="mobile">Contact(phone_number):</label>
+        <input
+          type="contact"
+          name="mobile"
+          id="mobile"
+          class="form-control"
+          
+          required
+        />
+      </div>
+
+  
+  
+  
+  
+  
+     <br>
+  
+           <div class="form-group">
+        <label id="email-label" for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+        
+          required
+        />
+      </div>
+
+
+
+      <br>
+  
+    <div class="form-group">
+   <label id="password-label" for="password">Password:</label>
+   <input
+     type="password"
+     name="password"
+     id="password"
+     class="form-control"
+   
+     required
+   />
+ </div>
+ <br>
+    <div class="form-group">
+      <label id="password2-label" for="password2">Comfirm Password:</label>
+      <input
+        type="password"
+        name="password2"
+        id="password2"
+        class="form-control"
+        required
+      
+      >
+
+
+    </div>
+    
+  
+  
+  
+  
+      <div class="form-group">
+          <br>
+        <div class="submit-button text-center ">
+        <button type="submit" id="submit" class="" style="border:none; text-align:center;padding: 8px;color:white; background-color:#1acc8d ; border-radius :0.6em;">
+          Create Account
+        </button>
+        </div>
+      </div>
+    </form>
+    
+</div>
+{% endblock %}
+<br>
+
+
+{% include 'footer.html' %}

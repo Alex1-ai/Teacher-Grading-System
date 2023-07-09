@@ -1,0 +1,124 @@
+{% include 'base.html' %}
+
+<br>
+<br>
+<br>
+<br>
+{% block body %}
+<div class="container">
+    <header class="header">
+      <h1 id="title" class="text-center" style="color:rgba(4, 6, 112, 0.9);"> Review</h1>
+      <p id="description" class="description text-center" style="color:rgba(9, 10, 73, 0.9);">
+        Review your Lecturers!  give us feedback so as to teach in an efficient way.
+      </p>
+    </header>
+    <form action="review_form" method="POST" style="color:rgba(16, 16, 71, 0.9);">
+        {% csrf_token %}
+      <div class="form-group">
+        <label id="name-label" for="lecturerName">Lecturer's Name:</label>
+        <input
+          type="text"
+          name="lecturerName"
+          id="lecturerName"
+          class="form-control"
+          
+          required
+        />
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <label id="name-label" for="lecturerCourse">Course the Lecturer teaches:</label>
+        <input
+          type="text"
+          name="lecturerCourse"
+          id="lecturerCourse"
+          class="form-control"
+          
+          required
+        />
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label id="courseCode-label" for="courseCode">Course Code:</label>
+        <input
+          type="text"
+          name="courseCode"
+          id="courseCode"
+          class="form-control"
+          
+          required
+        />
+      </div>
+
+  
+  
+  
+  
+  
+     <br>
+  
+        <div class="form-group">
+        <label id="communicationSkills-label" for="communicationSkills">Communication Skills (scale: 1-100):</label>
+        <input
+          type="text"
+          name="communicationSkills"
+          id="communicationSkilss"
+          class="form-control"
+        
+          required
+        />
+      </div>
+
+
+
+      <br>
+  
+    <div class="form-group">
+   <label id="name-label" for="listeningSkills">Listening Skills (scale 1-100):</label>
+   <input
+     type="text"
+     name="listeningSkills"
+     id="listeningSkills"
+     class="form-control"
+   
+     required
+   />
+ </div>
+ <br>
+ <div class="form-group">
+    <label id="name-label" for="userReview">Feedback Comment:</label>
+    <textarea
+      type="text"
+      
+      rows="4"
+
+      name="userReview"
+      class="form-control"
+    
+      required
+    >Enter text here...</textarea>
+  </div>
+ <br>
+
+    
+  
+  
+      <div class="form-group">
+          <br>
+        <div class="submit-button text-center ">
+        <button type="submit" id="submit" class="" style="border:none; text-align:center;padding: 8px;color:white; background-color:#1acc8d ; border-radius :0.6em;">
+          Submit
+        </button>
+        </div>
+      </div>
+    </form>
+    
+</div>
+{% endblock %}
+<br>
+
+
+{% include 'footer.html' %}

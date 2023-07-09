@@ -1,0 +1,63 @@
+{% include 'base.html' %}
+
+
+
+{% block content %}
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="section-bg">
+        <div class="container" data-aos="fade-up">
+  
+          <header class="section-header addingmarginTop">
+            <h3>MUCG FACULTIES</h3>
+            <p>Please kindly Select the Lecturer's Department .</p>
+          </header>
+  
+          <div class="row justify-content-center">
+            {% if faculties %}
+
+                {% for faculty in faculties %}                 
+                 <div class="col-md-6 col-lg-5 addingMargin" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ faculty.facultyImage.url}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ faculty.facultyName }}</h5>
+                      <hr style='background-color:rgb(226, 95, 43); height:3px;'>
+                      <p class="card-text">{{ faculty.facultyDesc}}</p>
+                      <a href="{% url 'review_form' %}" class="btn btn-primary">SELECT</a>
+                    </div>
+                  </div>
+                </div>
+               
+                 
+              {% endfor %}
+
+            {% endif %}
+                 
+
+            
+           
+           
+  
+          </div>
+  
+        </div>
+      </section><!-- End Services Section -->
+
+
+
+{% endblock %}
+
+
+{% include 'footer.html' %}
+
+<style>
+  .addingMargin{
+    margin-bottom:20px;
+
+  }
+  .addingmarginTop{
+    margin-top:24px;
+  }
+</style>
